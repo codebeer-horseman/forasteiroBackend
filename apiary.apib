@@ -1,9 +1,225 @@
 FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
-# codebeerhorseman
+# codebeerhorseman - ForasteiroBack
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+## Authentication Collection [/v1/api/authentication]
+### checkToken [GET /v1/api/authentication/checkToken/{token}]
+
++ Parameters
+
+    + token (string, required)
+
++ Response 200 (application/json)
+        
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+        
+### login [POST /v1/api/authentication/login]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### signUp [POST /v1/api/authentication/signUp]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### logout [POST /v1/api/authentication/logout]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+
+## User Collection [/v1/api/auth/user]
+### get userData [GET /v1/api/auth/user/userData]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### edit userData [PUT /v1/api/auth/user/userData]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### change Password [PUT /v1/api/auth/user/changePassword]]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+
+## Event Collection [/event]
+### nextEvents [GET /v1/api/event/nextEvents]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### lastEvents [GET /v1/api/event/lastEvents]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### searchEvent [POST /v1/api/event/searchEvent]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### eventDetail [GET /v1/api/event/eventDetail]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+
+## Destination Collection [/destination]
+### possibleDestination [GET  /v1/api/destination/possibleDestination]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### searchDestination [POST  /v1/api/destination/searchDestination]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### destinationDetail [POST  /v1/api/destination/destinationDetail]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+
+## Purchase Collection [/purchase]
+### orderDetail [GET /v1/api/auth/purchase/orderDetail]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### finishOrder [POST /v1/api/auth/purchase/finishOrder]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### myOrders [GET /v1/api/auth/purchase/myOrders]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### depositReceipt [POST /v1/api/auth/purchase/depositReceipt]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### giveup [POST /v1/api/auth/purchase/giveup]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+### sendObservation [GET /v1/api/auth/purchase/sendObservation]
++ Response 200 (application/json)
+
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
+
+
 
 ## Questions Collection [/questions]
 
@@ -11,27 +227,13 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
+        {
+          "status": "success",
+          "data": {
+            "isValid" : true
+          },
+          "message": null /* Or optional success message */
+        }
 
 ### Create a New Question [POST]
 
