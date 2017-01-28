@@ -21,12 +21,21 @@ HOST: http://polls.apiblueprint.org/
         }
         
 ### login [POST /v1/api/authentication/login]
++ Request (application/json)
+
+        {
+            "email": "dandpb@gmail.com",
+            "password": "123456"
+        }
+
 + Response 200 (application/json)
 
         {
           "status": "success",
           "data": {
-            "isValid" : true
+            "token" : "qwerwdghfgbfg123",
+            "username" : "Daniel",
+            "expiredTime" : 12341234123
           },
           "message": null /* Or optional success message */
         }
@@ -36,7 +45,9 @@ HOST: http://polls.apiblueprint.org/
         {
           "status": "success",
           "data": {
-            "isValid" : true
+            "token" : "qwerwdghfgbfg123",
+            "username" : "Daniel",
+            "expiredTime" : 12341234123
           },
           "message": null /* Or optional success message */
         }
@@ -45,9 +56,7 @@ HOST: http://polls.apiblueprint.org/
 
         {
           "status": "success",
-          "data": {
-            "isValid" : true
-          },
+          "data": {},
           "message": null /* Or optional success message */
         }
 
@@ -58,7 +67,11 @@ HOST: http://polls.apiblueprint.org/
         {
           "status": "success",
           "data": {
-            "isValid" : true
+            "name" : "",
+            "name" : "",
+            "name" : "",
+            "name" : "",
+            "name" : ""
           },
           "message": null /* Or optional success message */
         }
