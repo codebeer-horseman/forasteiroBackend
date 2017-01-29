@@ -40,13 +40,29 @@ HOST: http://polls.apiblueprint.org/
           "message": null /* Or optional success message */
         }
 ### signUp [POST /v1/api/authentication/signUp]
++ Request (application/json)
+
+        {
+            "name": "Daniel Barreto",
+            "birthDate": "17/07/1990",
+            "rgRne": "477781127",
+            "docIssuer": "SSP/SP",
+            "cpf": "93002820261",
+            "phone": "11984363878",
+            "email": "dandpb@gmail.com",
+            "password": "123456",
+            "newletter": true,
+            "facebookUser": "dandpb"
+            
+        }
+        
 + Response 200 (application/json)
 
         {
           "status": "success",
           "data": {
             "token" : "qwerwdghfgbfg123",
-            "username" : "Daniel",
+            "name" : "Daniel",
             "expiredTime" : 12341234123
           },
           "message": null /* Or optional success message */
@@ -67,31 +83,57 @@ HOST: http://polls.apiblueprint.org/
         {
           "status": "success",
           "data": {
-            "name" : "",
-            "name" : "",
-            "name" : "",
-            "name" : "",
-            "name" : ""
-          },
+            "name": "Daniel Barreto",
+            "birthDate": "17/07/1990",
+            "rgRne": "477781127",
+            "docIssuer": "SSP/SP",
+            "cpf": "93002820261",
+            "phone": "11984363878",
+            "email": "dandpb@gmail.com",
+            "newletter": true,
+            "facebookUser": "dandpb"
+            },
           "message": null /* Or optional success message */
         }
 ### edit userData [PUT /v1/api/auth/user/userData]
++ Request (application/json)
+
+        {
+            "name": "Daniel Barreto",
+            "birthDate": "17/07/1990",
+            "rgRne": "477781127",
+            "docIssuer": "SSP/SP",
+            "cpf": "93002820261",
+            "phone": "11984363878",
+            "email": "dandpb@gmail.com",
+            "newletter": true,
+            "facebookUser": "dandpb"
+            
+        }
+        
 + Response 200 (application/json)
 
         {
           "status": "success",
           "data": {
-            "isValid" : true
+            "name" : "Daniel2"
           },
           "message": null /* Or optional success message */
         }
 ### change Password [PUT /v1/api/auth/user/changePassword]]
++ Request (application/json)
+
+        {
+            "oldPassword": "123456",
+            "newPasswprd": "1234567"
+            
+        }
+        
 + Response 200 (application/json)
 
         {
           "status": "success",
           "data": {
-            "isValid" : true
           },
           "message": null /* Or optional success message */
         }
