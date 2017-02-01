@@ -144,9 +144,20 @@ HOST: http://polls.apiblueprint.org/
 
         {
           "status": "success",
-          "data": {
-            "isValid" : true
+          "data": [
+          {
+            "id" : "1",
+            "title" : "Ilha do Cardoso",
+            "data" : "17/01/2018",
+           "price" : "R$ 1000,00,
           },
+          {
+            "id" : "2",
+            "title" : "Tridade",
+            "data" : "17/07/2018",
+           "price" : "R$ 300,00,
+          } 
+          ],
           "message": null /* Or optional success message */
         }
 ### lastEvents [GET /v1/api/event/lastEvents]
@@ -154,21 +165,73 @@ HOST: http://polls.apiblueprint.org/
 
         {
           "status": "success",
-          "data": {
-            "isValid" : true
+          "data": [
+          {
+            "id" : "1",
+            "title" : "Ilha do Cardoso",
+            "data" : "17/01/2018",
+           "price" : "R$ 1000,00,
           },
+          {
+            "id" : "2",
+            "title" : "Tridade",
+            "data" : "17/07/2018",
+           "price" : "R$ 300,00,
+          } 
+          ],
           "message": null /* Or optional success message */
         }
-### searchEvent [POST /v1/api/event/searchEvent]
+### searchEvent [POST /v1/api/event/searchEvent{?page,rpp,search,filter}]
+
+## Parameters
+    page (int) Número da pagina de pedido que será carregada
+    rrp (int) resultados por página
+    query (string) palavra procurada
+    filter (string) filtro
+
+
 + Response 200 (application/json)
 
         {
           "status": "success",
           "data": {
-            "isValid" : true
+          "events":[
+          {
+            "id" : "1",
+            "title" : "Ilha do Cardoso",
+            "data" : "17/01/2018",
+           "price" : "R$ 1000,00,
+          },
+          {
+            "id" : "2",
+            "title" : "Tridade",
+            "data" : "17/07/2018",
+           "price" : "R$ 300,00,
+          } 
+          ],
+          "destinations":[
+          {
+            "id" : "1",
+            "title" : "Ilha do Cardoso",
+            "data" : "17/01/2018",
+           "price" : "R$ 1000,00,
+          },
+          {
+            "id" : "2",
+            "title" : "Tridade",
+            "data" : "17/07/2018",
+           "price" : "R$ 300,00,
+          } 
+          ],
+          "pagination": {
+               "currentPage": 1,
+               "totalPages": 1,
+               "totalItems": 2
+            }
           },
           "message": null /* Or optional success message */
         }
+        
 ### eventDetail [GET /v1/api/event/eventDetail]
 + Response 200 (application/json)
 
@@ -186,21 +249,66 @@ HOST: http://polls.apiblueprint.org/
 
         {
           "status": "success",
-          "data": {
-            "isValid" : true
+          "data": [
+          {
+            "id" : "1",
+            "title" : "Ilha do Cardoso",
+            "data" : "17/01/2018",
+           "price" : "R$ 1000,00,
           },
+          {
+            "id" : "2",
+            "title" : "Tridade",
+            "data" : "17/07/2018",
+           "price" : "R$ 300,00,
+          } 
+          ],
           "message": null /* Or optional success message */
         }
+        
 ### searchDestination [POST  /v1/api/destination/searchDestination]
 + Response 200 (application/json)
 
         {
           "status": "success",
           "data": {
-            "isValid" : true
+          "events":[
+          {
+            "id" : "1",
+            "title" : "Ilha do Cardoso",
+            "data" : "17/01/2018",
+           "price" : "R$ 1000,00,
+          },
+          {
+            "id" : "2",
+            "title" : "Tridade",
+            "data" : "17/07/2018",
+           "price" : "R$ 300,00,
+          } 
+          ],
+          "destinations":[
+          {
+            "id" : "1",
+            "title" : "Ilha do Cardoso",
+            "data" : "17/01/2018",
+           "price" : "R$ 1000,00,
+          },
+          {
+            "id" : "2",
+            "title" : "Tridade",
+            "data" : "17/07/2018",
+           "price" : "R$ 300,00,
+          } 
+          ],
+          "pagination": {
+               "currentPage": 1,
+               "totalPages": 1,
+               "totalItems": 2
+            }
           },
           "message": null /* Or optional success message */
         }
+        
 ### destinationDetail [POST  /v1/api/destination/destinationDetail]
 + Response 200 (application/json)
 
@@ -273,65 +381,3 @@ HOST: http://polls.apiblueprint.org/
           },
           "message": null /* Or optional success message */
         }
-
-
-
-## Questions Collection [/questions]
-
-### List All Questions [GET]
-
-+ Response 200 (application/json)
-
-        {
-          "status": "success",
-          "data": {
-            "isValid" : true
-          },
-          "message": null /* Or optional success message */
-        }
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
