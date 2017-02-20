@@ -1,0 +1,17 @@
+{
+    "port": 3000,
+    "corsHeaders": [
+        "Link"
+    ],
+    "bookshelf": {
+        "client": "postgres",
+        "connection": {
+            "host": "localhost",
+            "port": 5432,
+            "username": "daniel",
+            "password": "151719",
+            "database": "forasteiro_dev",
+            "charset": "utf8"
+        }
+    }
+}
