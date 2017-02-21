@@ -9,7 +9,8 @@ var jwt = require('jsonwebtoken');
 router.route('/authenticate')
 
 .post(function (req, res) {
-  User.forge({username: req.body.username}).fetch().then(function(user) {
+  User.forge({username: req.body.username, password: req.body.password}).fetch()
+  .then(function(user) {
     if (!user) {
       res.status(404).json({error: true, data: {}});
     }
