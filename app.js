@@ -10,9 +10,9 @@ var privateKey = require('./bin/jwt');
 var jwt = require('jsonwebtoken');
 
 // controllers
-var authenticate = require('./api/authenticate/controller');
+var authenticate = require('./api/controller/authenticate.controller');
 
-var user = require('./api/user/controller');
+var user = require('./api/controller/user.controller');
 
 var app = express();
 

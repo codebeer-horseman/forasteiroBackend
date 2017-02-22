@@ -5,7 +5,7 @@ bookshelf.plugin('visibility');
 
 var User = bookshelf.Model.extend({
   tableName: 'users',
-  hidden: ['password', 'token']
+  hidden: ['token']
 });
 
 module.exports = User;

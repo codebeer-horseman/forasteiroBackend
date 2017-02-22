@@ -2,15 +2,17 @@ var privateKey = require('../../bin/jwt');
 
 var express = require('express');
 var router = express.Router();
-var User = require('../user/model');
+var User = require('../model/user.model');
 var jwt = require('jsonwebtoken');
 
 /* GET user listing. */
 router.route('/authenticate')
 
 .post(function (req, res) {
-  User.forge({username: req.body.username, password: req.body.password}).fetch()
+
+  User.forge({username: req.body.username}).fetch()
   .then(function(user) {
+    console.log(user);
     if (!user) {
       res.status(404).json({error: true, data: {}});
     }
