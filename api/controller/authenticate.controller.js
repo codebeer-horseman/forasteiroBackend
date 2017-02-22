@@ -12,7 +12,6 @@ router.route('/authenticate')
 
   User.forge({username: req.body.username}).fetch()
   .then(function(user) {
-    console.log(user);
     if (!user) {
       res.status(404).json({error: true, data: {}});
     }
