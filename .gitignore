@@ -9,6 +9,8 @@ src/config.json
 # Build directory
 dist
 
+./idea
+
 # Dependency directories
 node_modules
 
